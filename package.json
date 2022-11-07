@@ -1,0 +1,29 @@
+{
+  "name": "tmsandbox",
+  "version": "1.0.0",
+  "description": "Test automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brendan-jarvis/TMSandbox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brendan-jarvis/TMSandbox/issues"
+  },
+  "homepage": "https://github.com/brendan-jarvis/TMSandbox#readme",
+  "dependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "devDependencies": {
+    "jest": "^29.3.0",
+    "supertest": "^6.3.1"
+  }
+}
