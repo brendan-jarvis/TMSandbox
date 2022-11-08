@@ -13,7 +13,7 @@ server.get('/', (req, res) => {
   const viewData = {
     messages: [
       {
-        content: `Please run the command <code>npm run test</code> to see the tests`,
+        content: `Please run the command <code>npm run test</code> to see the tests.`,
       },
     ],
   }
