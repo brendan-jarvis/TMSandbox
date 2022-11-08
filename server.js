@@ -1,20 +1,9 @@
 const express = require('express')
-const hbs = require('express-handlebars')
+const path = require('path')
 const server = express()
 
-server.engine('hbs', hbs.engine({ extname: 'hbs' }))
-server.set('view engine', 'hbs')
-
-server.get('/', (req, res) => {
-  const viewData = {
-    messages: [
-      {
-        content: `Please run the command <code>npm run test</code> to see the tests.`,
-      },
-    ],
-  }
-
-  res.render('home', viewData)
+server.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '/index.html'))
 })
 
 module.exports = server
