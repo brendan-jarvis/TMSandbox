@@ -7,15 +7,12 @@ const request = require('supertest')
 const server = require('./server')
 
 describe('TMSandbox API', () => {
-  test('Loads correctly', async () => {
-    const expected = 200
-
+  test('API responds with JSON', async () => {
     const res = await request('https://api.tmsandbox.co.nz').get(
       '/v1/Categories/6328/Details.json?catalogue=false'
     )
-    const actual = res.status
-
-    expect(actual).toBe(expected)
+    expect(res.headers['content-type']).toBe('application/json')
+    expect(res.status).toEqual(200)
   })
 
   test('Name is badges', async () => {
