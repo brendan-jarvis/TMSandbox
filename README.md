@@ -2,6 +2,8 @@
 
 Test automation in JavaScript using Jest and Supertest.
 
+Tests are in `./server.test.js` and written using async/await syntax.
+
 ## Setup
 
 ```shell
