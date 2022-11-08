@@ -13,8 +13,8 @@ describe('TMSandbox API', () => {
     const res = await request('https://api.tmsandbox.co.nz').get(
       '/v1/Categories/6328/Details.json?catalogue=false'
     )
-    console.log(res.body)
     const actual = res.status
+
     expect(actual).toBe(expected)
   })
 
@@ -25,6 +25,32 @@ describe('TMSandbox API', () => {
       '/v1/Categories/6328/Details.json?catalogue=false'
     )
     const actual = res.body.Name
+
     expect(actual).toBe(expected)
+  })
+
+  test('CanRelist is true', async () => {
+    const expected = true
+
+    const res = await request('https://api.tmsandbox.co.nz').get(
+      '/v1/Categories/6328/Details.json?catalogue=false'
+    )
+    const actual = res.body.CanRelist
+
+    expect(actual).toBe(expected)
+  })
+
+  test('The Promotions element with Name = "Feature" has a Description that contains the text "Better position in category"', async () => {
+    const expected = 'Better position in category'
+
+    const res = await request('https://api.tmsandbox.co.nz').get(
+      '/v1/Categories/6328/Details.json?catalogue=false'
+    )
+
+    const feature = res.body.Promotions.find(
+      (promotion) => promotion.Name === 'Feature'
+    )
+
+    expect(feature.Description).toContain(expected)
   })
 })
