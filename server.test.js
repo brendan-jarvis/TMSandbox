@@ -1,10 +1,4 @@
-/**
- *  @jest-environment jsdom
- * */
-
 const request = require('supertest')
-
-const server = require('./server')
 
 describe('TMSandbox API', () => {
   test('API responds with JSON', async () => {
@@ -12,7 +6,7 @@ describe('TMSandbox API', () => {
       '/v1/Categories/6328/Details.json?catalogue=false'
     )
     expect(res.headers['content-type']).toBe('application/json')
-    expect(res.status).toEqual(200)
+    expect(res.status).toBe(200)
   })
 
   test('Name is badges', async () => {
