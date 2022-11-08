@@ -6,7 +6,7 @@ Tests are in `./server.test.js` and written using async/await syntax.
 
 ## Setup
 
-```shell
+```
 git clone https://github.com/brendan-jarvis/TMSandbox.git # clone this repo
 cd TMSandbox/ # change to the new directory
 npm i           # install dependencies
