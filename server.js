@@ -5,10 +5,6 @@ const server = express()
 server.engine('hbs', hbs.engine({ extname: 'hbs' }))
 server.set('view engine', 'hbs')
 
-server.get('/hello', (req, res) => {
-  res.send('Hello World!')
-})
-
 server.get('/', (req, res) => {
   const viewData = {
     messages: [
